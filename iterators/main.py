@@ -7,7 +7,7 @@ individually
 """
 
 
-''' we are using the READLINE() method'''
+#*? we are using the READLINE() method
 def iteration_using_readline():
     line_num = 0
 
