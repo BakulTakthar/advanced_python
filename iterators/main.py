@@ -40,7 +40,7 @@ def iteration_using_next():
         line = next(open1)
         print(f"{line_num} | {line}")
 
-#iteration_using_next()   # <- run this for the above mentioned method
+# iteration_using_next()   # <- run this for the above mentioned method
         
 """
 Theory of itertators 
@@ -57,3 +57,56 @@ for example for, map, comprehension etc.
 
 #*? sometimes the iterator object (the output object of the iteration tool/context on the iterable object) is an iterable object as well (allows for iteration)
 #*? eg- itertaion on a nested list returns another list (which by being a list itself, allows for itertion) is an iterable object.
+
+'''example code to understand better'''
+
+def example_of_theory():
+    l2 = []
+    l1 = [1, 2, 3, 4, [3, 4, 5], 5, 6, 7, 8, 9, 0] #* initialising/declaring the iterable object
+    for i in l1: #* making the iteration tool/conetext (for in our case)
+        
+        l2.append(i) #* declaring the iterator object
+
+        if type(i) != int: #* checking if the iterator object is iterable in intself
+            iterable_output = i #* placing it in a seperate variable
+            l2.remove(i)
+    print(l2, iterable_output) #* printing both iterable and non iterable output objects
+
+# example_of_theory() # <- run this for the above mentioned method
+
+''' checking if an object is iterable
+
+concept -- if an object is its own iterator {returns true in the iter(-object-) is -object-}
+
+        if an object is its own iterator then it will only support one itertion at a time
+         (will not support multiple iterations at a time eg- both itertions when one is going 
+         forward and one is going backwards at the same time.)
+         example - a file
+          
+         
+concept -- if an object is not its own iterator {returns false in the iter(-object-) is -object-}
+        same but will support two way or even n-way iteration
+'''
+def checking_iterability():
+    f = open('sys.py')
+    print(f"{iter(f) is f} | true because it is a file")
+
+    g = [1, 2, 3, 4, 5, 6, 7]
+    print(f"{iter(g) is g} | false because it is a list")
+
+# checking_iterability()  # <- run this for the above mentioned method
+    
+
+""" enumerate objects are iterable too"""
+def enumerate_iteration():
+    E = enumerate("bakul")
+
+    I = iter(E)
+    output = []
+    for i in I:
+        output.append(i)
+    print(output)
+
+# enumerate_iteration()   # <- run this for the above mentioned method
+    
+'''list comprehension'''
