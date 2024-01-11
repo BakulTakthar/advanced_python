@@ -110,3 +110,41 @@ def enumerate_iteration():
 # enumerate_iteration()   # <- run this for the above mentioned method
     
 '''list comprehension'''
+
+def list_comprehension():
+    L = [1, 2, 3, 4, 5, 6,]
+
+    for i in range(len(L)):
+        L[i] += 10
+    print(L)
+    '''list comprehensions are written in squary braces just like lists
+    but comatain instruction on an existing list to iterate and modify it'''
+
+    L = [X + 10 for X in L]     # example of list comprehension
+    print(L)
+# list_comprehension()  # <- run this for the above mentioned method
+    
+def list_comprehension_on_file():
+    file = open('sys.py')
+
+    lines = file.readlines()
+    print(lines)
+    print('\n\n')
+    '''list comprehension on files by modifying the layout or results'''
+
+    lines = [line.rstrip() for line in lines]
+    print(lines)
+    print('\n\n')
+    '''using conditional statements on the '''
+    lines = [line.rstrip() for line in lines if len(lines)]
+    print(lines)
+    print('\n\n')
+    '''using nested for loops in list comprehension'''
+    list = [x + y for x in 'abc' for y in '123']
+    print(list)
+
+# list_comprehension_on_file() # <- run this for the above mentioned method
+    
+'''list comprehension is way better than employing complete for loops to do basic iteration on lists
+because its less lines of code and can be 2 times as fast as the standard method of creating an entirely 
+seperate for loop'''
