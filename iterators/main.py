@@ -147,4 +147,4 @@ def list_comprehension_on_file():
     
 '''list comprehension is way better than employing complete for loops to do basic iteration on lists
 because its less lines of code and can be 2 times as fast as the standard method of creating an entirely 
-seperate for loop'''
+seperate for loop '''
