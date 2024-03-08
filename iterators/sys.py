@@ -1,5 +1,1 @@
-from random import *
-
-a = "this is a tets file to check the file based iteration in python and should be hereby ignored by all means"
-
-print(a)
+"hi this is about testing the power of normal string inside python file"
